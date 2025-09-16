@@ -11,7 +11,6 @@
       {"clash_mode": "global", "server": "fakeip"},
       {"query_type": "HTTPS", "action": "reject"},
       {"domain_suffix": ["services.googleapis.cn", "googleapis.cn", "xn--ngstr-lra8j.com"], "server": "foreign"},
-      {"domain_suffix": ["m-team.cc", "okpt.net", "carpt.net", "ptvicomo.net", "vmshell.com", "medicalresearch.org.cn", "speedtest.net"], "server": "local"},
       {"rule_set": ["geosite-cn", "geosite-apple"], "server": "local"},
       {"query_type": ["A", "AAAA"], "server": "fakeip", "rewrite_ttl": 1}
     ],
@@ -68,8 +67,6 @@
       {"rule_set": "geoip-telegram", "outbound": "📲 Telegram"},
       {"rule_set": "geoip-netflix", "outbound": "🎥 Netflix"},
       {"rule_set": "geoip-cn", "outbound": "🎯 全球直连"}
-      {"domain_suffix": ["m-team.cc", "okpt.net", "carpt.net", "ptvicomo.net", "vmshell.com", "medicalresearch.org.cn", "speedtest.net"], "outbound": "🎯 全球直连"},
-      {"protocol": "bittorrent", "outbound": "🎯 全球直连"}
     ],
     "rule_set": [
       {"tag": "geosite-ai", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-ai-!cn.srs", "download_detour": "🎯 全球直连"},
