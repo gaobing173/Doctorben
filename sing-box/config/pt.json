@@ -12,11 +12,13 @@
       {"query_type": "HTTPS", "action": "reject"},
       {"domain_suffix": ["services.googleapis.cn", "googleapis.cn", "xn--ngstr-lra8j.com"], "server": "foreign"},
       {"domain_suffix": ["m-team.cc", "okpt.net", "carpt.net", "ptvicomo.net", "vmshell.com", "medicalresearch.org.cn", "speedtest.net"], "server": "public"},#添加的dns解析规则
-      {"rule_set": ["geosite-cn", "geosite-apple"], "server": "local"},
-      {"query_type": ["A", "AAAA"], "server": "fakeip", "rewrite_ttl": 1}
+      {"rule_set": "geosite-fakeipfilter", "server": "local"},
+      {"query_type": ["A", "AAAA"], "server": "fakeip", "rewrite_ttl": 1},
+      {"rule_set": "geosite-cn", "server": "local"}
     ],
     "final": "foreign",
-    "strategy": "ipv4_only",
+    "client_subnet": "223.5.5.0/24",
+    "strategy": "prefer_ipv4",
     "independent_cache": true,
     "reverse_mapping": true
   },
@@ -106,7 +108,12 @@
       "mtu": 9000,
       "auto_route": true,
       "auto_redirect": true,
-      "strict_route": true
+      "strict_route": false
+    },
+    {
+      "type": "mixed",
+      "listen": "127.0.0.1",
+      "listen_port": 7890
     }
   ],
   "experimental": {
