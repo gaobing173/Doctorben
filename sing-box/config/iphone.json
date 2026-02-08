@@ -96,16 +96,20 @@
   },
   "inbounds": [
     {
-      "tag": "tun-in",
       "type": "tun",
       "address": [
-        "172.19.0.1/30",
-        "fdfe:dcba:9876::1/126"
+        "172.19.0.0/30",
+        "fdfe:dcba:9876::0/126"
       ],
-      "mtu": 9000,
+      "stack": "mixed",
       "auto_route": true,
-      "auto_redirect": true,
-      "strict_route": false
+      "platform": {
+        "http_proxy": {
+          "enabled": true,
+          "server": "127.0.0.1",
+          "server_port": 7890
+        }
+      }
     },
     {
       "type": "mixed",
@@ -115,15 +119,10 @@
   ],
   "experimental": {
     "cache_file": {
-      "enabled": true,
-      "path": "/etc/momo/run/cache.db",
-      "store_fakeip": true
+      "enabled": true
     },
     "clash_api": {
-      "external_controller": "0.0.0.0:9438",
-      "external_ui": "/etc/momo/run/ui",
-      "external_ui_download_url": "https://github.350600.xyz/https://github.com/MetaCubeX/Yacd-meta/archive/gh-pages.zip",
-      "external_ui_download_detour": "🎯 全球直连",
+      "external_controller": "127.0.0.1:9095",
       "secret": "",
       "default_mode": "rule"
     }
