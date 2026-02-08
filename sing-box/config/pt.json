@@ -10,7 +10,6 @@
       {"clash_mode": "direct", "server": "local"},
       {"clash_mode": "global", "server": "fakeip"},
       {"query_type": "HTTPS", "action": "reject"},
-      {"domain_suffix": ["services.googleapis.cn", "googleapis.cn", "xn--ngstr-lra8j.com"], "server": "foreign"},
       {"domain_suffix": ["m-team.cc", "okpt.net", "carpt.net", "ptvicomo.net", "vmshell.com", "medicalresearch.org.cn", "speedtest.net"], "server": "public"},#添加的dns解析规则
       {"rule_set": "geosite-fakeipfilter", "server": "local"},
       {"query_type": ["A", "AAAA"], "server": "fakeip", "rewrite_ttl": 1},
